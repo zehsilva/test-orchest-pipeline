@@ -7,6 +7,27 @@
         "data_passing_memory_size": "4GB"
     },
     "steps": {
+        "34d980cc-001c-487e-b327-fd18fef2ab29": {
+            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
+            "file_path": "src/data_exploration.ipynb",
+            "incoming_connections": [
+                "ddbf7213-792c-47bb-a5c6-2e3f5412dc82"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    672.7838240158785,
+                    395.72940787297404
+                ]
+            },
+            "parameters": {},
+            "title": "Data exploration - plotting",
+            "uuid": "34d980cc-001c-487e-b327-fd18fef2ab29"
+        },
         "683a815a-564c-49f0-81eb-f9a171e6fb35": {
             "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
             "file_path": "src/node_write_items.py",
@@ -20,8 +41,8 @@
             "meta_data": {
                 "hidden": false,
                 "position": [
-                    635.5,
-                    241
+                    677.5,
+                    199
                 ]
             },
             "parameters": {},
@@ -41,8 +62,8 @@
             "meta_data": {
                 "hidden": false,
                 "position": [
-                    356.5,
-                    258
+                    410.5,
+                    224
                 ]
             },
             "parameters": {
@@ -62,19 +83,40 @@
             "meta_data": {
                 "hidden": false,
                 "position": [
-                    78.5,
-                    110
+                    53.5,
+                    396
                 ]
             },
             "parameters": {
-                "lag_days": 2,
                 "future": 6,
                 "item_id": "c5d59p6ai79adbimq5v0",
-                "time_split": 3,
-                "name": "item_data_1"
+                "lag_days": 2,
+                "name": "item_data_1",
+                "time_split": 3
             },
-            "title": "Read item",
+            "title": "Read item configuration",
             "uuid": "c7d029c4-fe9a-490e-bf33-7217e42c5c99"
+        },
+        "ddbf7213-792c-47bb-a5c6-2e3f5412dc82": {
+            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
+            "file_path": "src/node_read_items.py",
+            "incoming_connections": [
+                "c7d029c4-fe9a-490e-bf33-7217e42c5c99"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    385.5,
+                    396
+                ]
+            },
+            "parameters": {},
+            "title": "Read item",
+            "uuid": "ddbf7213-792c-47bb-a5c6-2e3f5412dc82"
         }
     },
     "uuid": "47fc83fc-d17e-4d96-a6ac-8ac714f3d135",
