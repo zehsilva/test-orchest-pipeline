@@ -7,27 +7,6 @@
         "data_passing_memory_size": "4GB"
     },
     "steps": {
-        "34d980cc-001c-487e-b327-fd18fef2ab29": {
-            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
-            "file_path": "src/data_exploration.ipynb",
-            "incoming_connections": [
-                "ddbf7213-792c-47bb-a5c6-2e3f5412dc82"
-            ],
-            "kernel": {
-                "display_name": "Python 3",
-                "name": "python"
-            },
-            "meta_data": {
-                "hidden": false,
-                "position": [
-                    672.7838240158785,
-                    395.72940787297404
-                ]
-            },
-            "parameters": {},
-            "title": "Data exploration - plotting",
-            "uuid": "34d980cc-001c-487e-b327-fd18fef2ab29"
-        },
         "683a815a-564c-49f0-81eb-f9a171e6fb35": {
             "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
             "file_path": "src/node_write_items.py",
