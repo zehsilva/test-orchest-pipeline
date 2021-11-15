@@ -9,7 +9,7 @@ from merlion.models.forecast.prophet import Prophet, ProphetConfig
 from merlion.transform.base import Identity
 
 
-def pipeline_data(times, values, new_id,new_name, original_id, original_name):
+def pipeline_data(times, values, new_id,new_name, original_id):
     labels = {"source":["Orchest pipelines"], "original_id":[original_id]}
     var_name = "clfy_"+new_id
     
@@ -96,9 +96,9 @@ for name in invars:
     forecast_upper_values= [x+y for x,y in zip(test_pred.univariates[col].values, test_err.univariates[col_err].values)]
     forecast_lower_values= [x-y for x,y in zip(test_pred.univariates[col].values, test_err.univariates[col_err].values)]
     
-    output_dict.update(pipeline_data(test_pred.time_stamps,forecast_values, forecast_name, col))
-    output_dict.update(pipeline_data(test_err.time_stamps,forecast_upper_values, forecast_name_upper, col))
-    output_dict.update(pipeline_data(test_err.time_stamps,forecast_lower_values, forecast_name_lower, col))
+    output_dict.update(pipeline_data(test_pred.time_stamps,forecast_values, forecast_name, forecast_name, col))
+    output_dict.update(pipeline_data(test_err.time_stamps,forecast_upper_values, forecast_name_upper, forecast_name_upper, col))
+    output_dict.update(pipeline_data(test_err.time_stamps,forecast_lower_values, forecast_name_lower, forecast_name_lower, col))
     
 orchest.output(output_dict, "clfy_dict")
 
