@@ -1,0 +1,108 @@
+{
+    "name": "Read, Forecast and Write to Clarify",
+    "parameters": {},
+    "services": {},
+    "settings": {
+        "auto_eviction": true,
+        "data_passing_memory_size": "4GB"
+    },
+    "steps": {
+        "683a815a-564c-49f0-81eb-f9a171e6fb35": {
+            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
+            "file_path": "src/node_write_items.py",
+            "incoming_connections": [
+                "89e0f952-8d46-4bc5-9386-0236d88e9072"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    635.5,
+                    241
+                ]
+            },
+            "parameters": {},
+            "title": "Write data back to Clarify",
+            "uuid": "683a815a-564c-49f0-81eb-f9a171e6fb35"
+        },
+        "89e0f952-8d46-4bc5-9386-0236d88e9072": {
+            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
+            "file_path": "src/node_read_items.py",
+            "incoming_connections": [
+                "a25ef98e-a03d-43f6-b643-17587dda26c2",
+                "c7d029c4-fe9a-490e-bf33-7217e42c5c99"
+            ],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    356.5,
+                    258
+                ]
+            },
+            "parameters": {
+                "include_future": true
+            },
+            "title": "Forecast with lag and future",
+            "uuid": "89e0f952-8d46-4bc5-9386-0236d88e9072"
+        },
+        "a25ef98e-a03d-43f6-b643-17587dda26c2": {
+            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
+            "file_path": "item_config_step.py",
+            "incoming_connections": [],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    79.5,
+                    282
+                ]
+            },
+            "parameters": {
+                "day": 2,
+                "future": 6,
+                "item_id": "c5d5akeai79adbimq7gg",
+                "lag": 3,
+                "name": "windsptrd"
+            },
+            "title": "Trondheim Windspeed",
+            "uuid": "a25ef98e-a03d-43f6-b643-17587dda26c2"
+        },
+        "c7d029c4-fe9a-490e-bf33-7217e42c5c99": {
+            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
+            "file_path": "src/item_config_step.py",
+            "incoming_connections": [],
+            "kernel": {
+                "display_name": "Python 3",
+                "name": "python"
+            },
+            "meta_data": {
+                "hidden": false,
+                "position": [
+                    78.5,
+                    110
+                ]
+            },
+            "parameters": {
+                "day": 2,
+                "future": 6,
+                "item_id": "c5d59p6ai79adbimq5v0",
+                "lag": 3,
+                "name": "temptrd"
+            },
+            "title": "Trondheim temperature",
+            "uuid": "c7d029c4-fe9a-490e-bf33-7217e42c5c99"
+        }
+    },
+    "uuid": "47fc83fc-d17e-4d96-a6ac-8ac714f3d135",
+    "version": "1.0.0"
+}
