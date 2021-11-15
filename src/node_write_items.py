@@ -8,7 +8,6 @@ clarify_vars = []
 if "clfy_dict" in inputs.keys():
     clarify_vars=list(inputs["clfy_dict"].keys())
     inputs = inputs["clfy_dict"]
-print(clarify_vars)
 
 for name in clarify_vars:
     new_signal_name = inputs[name]["name"]

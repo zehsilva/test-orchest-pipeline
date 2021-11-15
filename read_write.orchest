@@ -30,9 +30,8 @@
         },
         "89e0f952-8d46-4bc5-9386-0236d88e9072": {
             "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
-            "file_path": "src/node_read_items.py",
+            "file_path": "src/node_read_item_forecast.py",
             "incoming_connections": [
-                "a25ef98e-a03d-43f6-b643-17587dda26c2",
                 "c7d029c4-fe9a-490e-bf33-7217e42c5c99"
             ],
             "kernel": {
@@ -52,34 +51,9 @@
             "title": "Forecast with lag and future",
             "uuid": "89e0f952-8d46-4bc5-9386-0236d88e9072"
         },
-        "a25ef98e-a03d-43f6-b643-17587dda26c2": {
-            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
-            "file_path": "item_config_step.py",
-            "incoming_connections": [],
-            "kernel": {
-                "display_name": "Python 3",
-                "name": "python"
-            },
-            "meta_data": {
-                "hidden": false,
-                "position": [
-                    79.5,
-                    282
-                ]
-            },
-            "parameters": {
-                "day": 2,
-                "future": 6,
-                "item_id": "c5d5akeai79adbimq7gg",
-                "lag": 3,
-                "name": "windsptrd"
-            },
-            "title": "Trondheim Windspeed",
-            "uuid": "a25ef98e-a03d-43f6-b643-17587dda26c2"
-        },
         "c7d029c4-fe9a-490e-bf33-7217e42c5c99": {
             "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
-            "file_path": "src/item_config_step.py",
+            "file_path": "src/node_config_read_forecast.py",
             "incoming_connections": [],
             "kernel": {
                 "display_name": "Python 3",
@@ -93,13 +67,13 @@
                 ]
             },
             "parameters": {
-                "day": 2,
+                "lag_days": 2,
                 "future": 6,
                 "item_id": "c5d59p6ai79adbimq5v0",
-                "lag": 3,
-                "name": "temptrd"
+                "time_split": 3,
+                "name": "item_data_1"
             },
-            "title": "Trondheim temperature",
+            "title": "Read item",
             "uuid": "c7d029c4-fe9a-490e-bf33-7217e42c5c99"
         }
     },
