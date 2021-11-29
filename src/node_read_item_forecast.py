@@ -94,10 +94,10 @@ for name in invars:
     forecast_values = test_pred.univariates[col].values
     forecast_upper_values= [x+y for x,y in zip(test_pred.univariates[col].values, test_err.univariates[col_err].values)]
     forecast_lower_values= [x-y for x,y in zip(test_pred.univariates[col].values, test_err.univariates[col_err].values)]
-    
-    output_dict.update(pipeline_data(test_pred.time_stamps,forecast_values, forecast_name, f"Forecast {signal_name}", col))
-    output_dict.update(pipeline_data(test_err.time_stamps,forecast_upper_values, forecast_name_upper, f"Forecast {signal_name} upper bound", col))
-    output_dict.update(pipeline_data(test_err.time_stamps,forecast_lower_values, forecast_name_lower, f"Forecast {signal_name} lower bound", col))
+
+    output_dict.update(pipeline_data(test_pred.time_stamps,forecast_values, forecast_name, f"Forecast {signal_name}", col,  signal_name ))
+    output_dict.update(pipeline_data(test_err.time_stamps,forecast_upper_values, forecast_name_upper, f"Forecast {signal_name} upper bound", col,  signal_name ))
+    output_dict.update(pipeline_data(test_err.time_stamps,forecast_lower_values, forecast_name_lower, f"Forecast {signal_name} lower bound", col,  signal_name ))
     
 orchest.output(output_dict, "clfy_dict")
 
