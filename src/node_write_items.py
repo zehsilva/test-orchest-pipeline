@@ -17,12 +17,16 @@ for name in clarify_vars:
                 "labels" : labels }
     if "kwargs" in inputs[name].keys():
         args.update(inputs[name]["kargs"])
-    
 
-    response = client.save_signals(
-        inputs={new_signal_id : args},
-        created_only=False #False = create new signal if none with the id exists, True = update existing signal
-    )
+    metadata = SignalInfo(**args)
+    
+    save_signal_request = { 
+        "inputs": {
+            new_signal_id : metadata
+            },
+        "created_only" : False #False = create new signal if none with the id exists, True = update existing signal
+    }
+    response = client.save_signals( save_signal_request )
 
     times = inputs[name]['times']
     series = {new_signal_id : inputs[name]['series']}
