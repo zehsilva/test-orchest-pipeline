@@ -24,7 +24,7 @@ for name in clarify_vars:
         "inputs": {
             new_signal_id : metadata
             },
-        "created_only" : False #False = create new signal if none with the id exists, True = update existing signal
+        "createOnly" : False #False = create new signal if none with the id exists, True = update existing signal
     }
     response = client.save_signals( save_signal_request )
 
