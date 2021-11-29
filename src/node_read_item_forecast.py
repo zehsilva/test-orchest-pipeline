@@ -31,8 +31,6 @@ def generate_future_timestamps(n_future, timestamps, start):
     return future
 
 
-include_future = orchest.get_step_param("include_future")
-
 client = APIClient("./clarify-credentials.json")
 
 inputs = orchest.get_inputs()
@@ -83,7 +81,7 @@ for name in invars:
     model  = Prophet(config)
     model.train(train_data=train_data)
     test_times =  test_data.time_stamps
-    if include_future:
+    if future > 0:
        test_times=test_times+generate_future_timestamps(future, test_data.time_stamps, start=test_data.time_stamps[-1])
     test_pred, test_err = model.forecast(time_stamps=test_times)
 
