@@ -1,5 +1,5 @@
 import orchest
-from pyclarify import Signal, DataFrame
+from pyclarify import SignalInfo, DataFrame
 from pyclarify import APIClient
 client = APIClient("./clarify-credentials.json")
 
@@ -18,15 +18,14 @@ for name in clarify_vars:
     if "kwargs" in inputs[name].keys():
         args.update(inputs[name]["kargs"])
     
-    new_signal_meta_data = Signal(**args)
 
     response = client.save_signals(
-        inputs={new_signal_id : new_signal_meta_data},
-        created_only=False #False = create new signal, True = update existing signal
+        inputs={new_signal_id : args},
+        created_only=False #False = create new signal if none with the id exists, True = update existing signal
     )
 
     times = inputs[name]['times']
-    series = {name: inputs[name]['series']}
+    series = {new_signal_id : inputs[name]['series']}
     new_df = DataFrame(times=times, series=series)
     response = client.insert(new_df)
     print(response)

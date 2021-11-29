@@ -8,7 +8,7 @@
     },
     "steps": {
         "683a815a-564c-49f0-81eb-f9a171e6fb35": {
-            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
+            "environment": "fdb1baec-e5a2-416f-b39e-fda1b320de38",
             "file_path": "src/node_write_items.py",
             "incoming_connections": [
                 "89e0f952-8d46-4bc5-9386-0236d88e9072"
@@ -29,7 +29,7 @@
             "uuid": "683a815a-564c-49f0-81eb-f9a171e6fb35"
         },
         "89e0f952-8d46-4bc5-9386-0236d88e9072": {
-            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
+            "environment": "fdb1baec-e5a2-416f-b39e-fda1b320de38",
             "file_path": "src/node_read_item_forecast.py",
             "incoming_connections": [
                 "c7d029c4-fe9a-490e-bf33-7217e42c5c99"
@@ -52,7 +52,7 @@
             "uuid": "89e0f952-8d46-4bc5-9386-0236d88e9072"
         },
         "c7d029c4-fe9a-490e-bf33-7217e42c5c99": {
-            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
+            "environment": "fdb1baec-e5a2-416f-b39e-fda1b320de38",
             "file_path": "src/node_config_read_forecast.py",
             "incoming_connections": [],
             "kernel": {
@@ -77,7 +77,7 @@
             "uuid": "c7d029c4-fe9a-490e-bf33-7217e42c5c99"
         },
         "ddbf7213-792c-47bb-a5c6-2e3f5412dc82": {
-            "environment": "db3e6844-04fb-4ef5-aac8-a397a4b05f84",
+            "environment": "fdb1baec-e5a2-416f-b39e-fda1b320de38",
             "file_path": "src/node_read_items.py",
             "incoming_connections": [
                 "c7d029c4-fe9a-490e-bf33-7217e42c5c99"

@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta
 from pyclarify import APIClient
-from pyclarify.models.requests import ItemSelect
 import orchest
 import pandas as pd
 import numpy as np
@@ -20,7 +19,7 @@ for name in invars:
     lag= inputs[name]['lag_days']
 
 
-    reading_data_request = {
+    data_params = {
       "items": {
         "include": True,
         "filter": {
@@ -37,7 +36,6 @@ for name in invars:
       }
     }
 
-    data_params = ItemSelect(**reading_data_request)
 
     response = client.select_items(data_params)
     
